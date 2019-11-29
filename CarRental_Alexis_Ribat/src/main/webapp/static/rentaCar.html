@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Rent a car</title>
+</head>
+<body>
+
+<a href="index.html">Menu</a>
+
+<h1>Rent a car</h1>
+
+<div id="listOfCars">
+
+
+<form>
+	Plate number: <input id="plateNumberId" type="text" name="plateNumber" value="11AA22"><br>
+  BeginDate: <input id="BegindateId" type="text" name="beginDate" value="02-02-1995"><br><br>
+  <input type="button" value="rent" onclick="rentaCar()">
+</form> 
+
+
+<script>
+function rentaCar() {
+    var text = '{"';
+    text += 'plateNumber":"' + document.getElementById("plateNumberId").value + '",'
+    text += '"beginDate":"' + document.getElementById("BegindateId").value + '"}'
+    
+    var car = JSON.parse(text); 
+    
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open('PUT', "http://localhost:8080/cars", true);
+    httpRequest.setRequestHeader("Content-type", "application/json");
+    httpRequest.send(JSON.stringify(car));
+    
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>

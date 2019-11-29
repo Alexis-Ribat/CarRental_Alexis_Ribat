@@ -9,9 +9,10 @@
 
 package com.example.CarRental_Alexis_Ribat;
 
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
+
 
 public class Car {
 	
@@ -20,29 +21,44 @@ public class Car {
 	private int nomberOfSeats;
 	private int price;
 	
-	
 	Date date = null;
     SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-    
-    private String begin= "11/11/2017";
-    private String end = "1/1/2018";
-    
-	
-	
+	private String begin= " ";
+	private String end = " ";
+	private boolean rent = false;
 
 	public Car() {
 		super();
 	}
 	
-	public Car(String plateNumber, String brand, int nomberOfSeats, int price) {
+	public Car(String plateNumber, String brand, int nomberOfSeats, int price, String begin, String end , boolean rent) {
 		super();
 		this.plateNumber = plateNumber;
 		this.brand = brand;
 		this.nomberOfSeats = nomberOfSeats;
 		this.price = price;
+		this.begin = begin;
+		this.end = end;
+		this.rent = rent;
 		
 	}
 	
+	public String getBegin() {
+		return begin;
+	}
+
+	public void setBegin(String begin) {
+		this.begin = begin;
+	}
+
+	public String getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = end;
+	}
+
 	public String getPlateNumber() {
 		return plateNumber;
 	}
@@ -75,6 +91,7 @@ public class Car {
 		this.price = price;
 	}
 	
+	/*
 	public String getBegin() {
 		return begin;
 	}
@@ -90,11 +107,13 @@ public class Car {
 	public void setEnd(String end) {
 		this.end = end;
 	}
+	
+	*/
 
 	@Override
 	public String toString() {
 		return "Car [plateNumber=" + plateNumber + ", brand=" + brand + ", nomberOfSeats=" + nomberOfSeats + ", price="
-				+ price + ", date=" + date + ", begin=" + begin + ", end=" + end + "]";
+				+ price + ", begin=" + begin + ", end=" + end + "]";
 	}
 
 }

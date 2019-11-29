@@ -14,9 +14,7 @@
   Plate number: <input id="plateNumberId" type="text" name="plateNumber" value="11AA22"><br>
   Brand: <input id="brandId" type="text" name="brand" value="Ferrari"><br>
   NomberOfSeats: <input id="nomberOfSeatsId" type="text" name="nomberOfSeats" value="5"><br>
-  Price: <input id="priceId" type="text" name="price" value="1000"><br>
-  Begin: <input id="BeginId" type="text" name="begin" value="11/11/2017"><br>
-  End: <input id="EndId" type="text" name="end" value="1/1/2018"><br><br>
+  Price: <input id="priceId" type="text" name="price" value="1000"><br><br>
   <input type="button" value="Submit" onclick="sendCar()">
 </form> 
 
@@ -26,9 +24,7 @@ function sendCar() {
     text += 'plateNumber":"' + document.getElementById("plateNumberId").value + '",'
     text += '"brand":"' + document.getElementById("brandId").value + '",'
     text += '"nomberOfSeats":"' + document.getElementById("nomberOfSeatsId").value + '",'
-    text += '"price":"' + document.getElementById("priceId").value + '",'
-    text += '"begin":"' + document.getElementById("beginId").value + '",'
-    text += '"end":"' + document.getElementById("endId").value + '",''"}'
+    text += '"price":"' + document.getElementById("priceId").value + '"}'
     
     var car = JSON.parse(text); 
     
