@@ -144,5 +144,35 @@ public class CarRentalService {
 		cars.add(car);
 		return car;
 	}
+	
+	@RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.PUT)
+	@ResponseStatus(HttpStatus.OK)
+	public void rentAndGetBack(@PathVariable("plateNumber") String plateNumber, 
+							   @RequestParam(value="rent",required = true)boolean rent, 
+							   @RequestBody (required = false) Dates dates)
+	{
+		for(int i = 0; i < cars.size(); i++) 
+		{
+			if(cars.get(i).getPlateNumber().equals(plateNumber)) 
+			{
+				if (rent == true) 
+				{
+					// update data with the new beginDate and endDate ; set rent = true
+					System.out.println();
+					cars.get(i).setRent(true);
+					cars.get(i).setBegin(dates.getBegin());
+					cars.get(i).setEnd(dates.getEnd());
+					
+				}
+				else if (rent == false)
+				{
+					// set beginDate and endDate = NULL ; set rent = false
+					cars.get(i).setRent(false);
+					cars.get(i).setBegin(null);
+					cars.get(i).setEnd(null);
+				}
+			}
+		}
+	}
 
 }

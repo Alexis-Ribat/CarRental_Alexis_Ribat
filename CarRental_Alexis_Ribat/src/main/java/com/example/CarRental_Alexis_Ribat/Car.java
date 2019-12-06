@@ -27,6 +27,14 @@ public class Car {
 	private String end = " ";
 	private boolean rent = false;
 
+	public boolean isRent() {
+		return rent;
+	}
+
+	public void setRent(boolean rent) {
+		this.rent = rent;
+	}
+
 	public Car() {
 		super();
 	}
@@ -91,24 +99,8 @@ public class Car {
 		this.price = price;
 	}
 	
-	/*
-	public String getBegin() {
-		return begin;
-	}
-
-	public void setBegin(String begin) {
-		this.begin = begin;
-	}
-
-	public String getEnd() {
-		return end;
-	}
-
-	public void setEnd(String end) {
-		this.end = end;
-	}
 	
-	*/
+	
 
 	@Override
 	public String toString() {
